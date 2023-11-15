@@ -40534,6 +40534,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeightScale
       objectReference: {fileID: 0}
+    - target: {fileID: 8570048754010814597, guid: b5ea4b9034a4f1a42912f85fb44ef1cb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.4993
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
