@@ -360,8 +360,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.012399994, y: 0.0198, z: 0}
-    m_Extent: {x: 0.16589999, y: 0.19029999, z: 0}
+    m_Center: {x: 0.014449999, y: 0.010800004, z: 0}
+    m_Extent: {x: 0.16975, y: 0.192, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -17377,7 +17377,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: ab9cd594e473e4548b2adaf3756bf03a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -17387,7 +17387,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &668842030
 MonoBehaviour:
@@ -26481,8 +26481,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.014849998, y: 0.010399997, z: 0}
-    m_Extent: {x: 0.16755, y: 0.1822, z: 0}
+    m_Center: {x: 0.011799999, y: 0.009300001, z: 0}
+    m_Extent: {x: 0.16330001, y: 0.18939999, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -26680,8 +26680,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.031049997, y: 0.038100004, z: 0}
-    m_Extent: {x: 0.18615, y: 0.1821, z: 0}
+    m_Center: {x: 0.026549995, y: 0.030749999, z: 0}
+    m_Extent: {x: 0.18805, y: 0.17465001, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -27131,8 +27131,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.021799996, y: 0.032950006, z: 0}
-    m_Extent: {x: 0.1824, y: 0.18485, z: 0}
+    m_Center: {x: 0.033150002, y: 0.029550001, z: 0}
+    m_Extent: {x: 0.18555, y: 0.17755, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -27155,6 +27155,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1818552330631626727, guid: b5ea4b9034a4f1a42912f85fb44ef1cb, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6113129158469652283, guid: b5ea4b9034a4f1a42912f85fb44ef1cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.56
@@ -27194,6 +27198,10 @@ PrefabInstance:
     - target: {fileID: 6113129158469652283, guid: b5ea4b9034a4f1a42912f85fb44ef1cb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389427819115375731, guid: b5ea4b9034a4f1a42912f85fb44ef1cb, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6557226773843141325, guid: b5ea4b9034a4f1a42912f85fb44ef1cb, type: 3}
       propertyPath: m_Name

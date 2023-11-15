@@ -116,7 +116,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!255 &7868186560069576337
 FixedJoint2D:
   m_ObjectHideFlags: 0
@@ -2325,7 +2325,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!255 &4954946397064288361
 FixedJoint2D:
   m_ObjectHideFlags: 0
