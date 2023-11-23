@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] private int totalRobots;
     [SerializeField] private int robotsInDestination;
+    [SerializeField] private ExitDoor exitDoor;
 
     public bool IsDoorOpened {  get; private set; }
 
@@ -24,6 +25,10 @@ public class LevelManager : MonoBehaviour
 
     private void ControlDoor()
     {
-        IsDoorOpened = (robotsInDestination >= totalRobots);        
+        IsDoorOpened = (robotsInDestination >= totalRobots);      
+        if(IsDoorOpened )
+        {
+            exitDoor.OpenDoor();
+        }
     }
 }

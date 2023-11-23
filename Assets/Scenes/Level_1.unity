@@ -263,6 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalRobots: 1
   robotsInDestination: 0
+  exitDoor: {fileID: 257309785}
 --- !u!1 &220796499
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,8 +361,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0123, y: 0.010700002, z: 0}
-    m_Extent: {x: 0.1663, y: 0.1961, z: 0}
+    m_Center: {x: 0.017950006, y: 0.016350001, z: 0}
+    m_Extent: {x: 0.15935001, y: 0.18695, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -443,7 +444,7 @@ Transform:
   m_GameObject: {fileID: 250395064}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.170536, y: -0.7370498, z: 0}
+  m_LocalPosition: {x: -13.948314, y: -1.1745498, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -487,6 +488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 257309783}
   - component: {fileID: 257309784}
+  - component: {fileID: 257309785}
   m_Layer: 0
   m_Name: ExitDoor
   m_TagString: Untagged
@@ -555,6 +557,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &257309785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257309782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2c355e257b2394d91daec9106c4341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &312885421
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,7 +929,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.090536, y: -3.94295, z: -10}
+  m_LocalPosition: {x: 3.8683138, y: -3.50545, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27923,7 +27937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24807035cc560794786d079a71f3cac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   radiusToCheckFloor: 0.39
   radiusToCheckWall: 0.12
   destinationLayer:
@@ -28001,8 +28015,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.018, y: 0.016000003, z: 0}
-    m_Extent: {x: 0.1579, y: 0.1893, z: 0}
+    m_Center: {x: 0.009949997, y: 0.0111500025, z: 0}
+    m_Extent: {x: 0.16695, y: 0.19575, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -28200,8 +28214,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0321, y: 0.026200004, z: 0}
-    m_Extent: {x: 0.18110001, y: 0.18439999, z: 0}
+    m_Center: {x: 0.027199998, y: 0.0353, z: 0}
+    m_Extent: {x: 0.1832, y: 0.1869, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -28651,8 +28665,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.027099997, y: 0.034649998, z: 0}
-    m_Extent: {x: 0.1847, y: 0.18185, z: 0}
+    m_Center: {x: 0.033, y: 0.02945, z: 0}
+    m_Extent: {x: 0.1814, y: 0.18255, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
