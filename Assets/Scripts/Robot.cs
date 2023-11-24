@@ -29,24 +29,33 @@ public class Robot : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
-        if (!isOnDestination)
-        {
-            //transform.Translate(direction * speed * Time.deltaTime);
-            rb.velocity = new Vector2(directionX * speed, rb.velocity.y);
-        }        
+    {                    
+        rb.velocity = new Vector2(directionX * GetSpeed(), rb.velocity.y);     
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {   
+    {     
         if ((destinationLayer.value & (1 << collision.transform.gameObject.layer)) > 0)        
-        {
+        {            
             isOnDestination = true;
+            speed = 0;
+        }
+    }
+
+    private float GetSpeed()
+    {
+        if (isOnDestination)
+        {
+            return 0;
+        }
+        else
+        { 
+            return speed; 
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
-    {
+    {       
         if ((destinationLayer.value & (1 << collision.transform.gameObject.layer)) > 0)
         {
             isOnDestination = false;

@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     [SerializeField] private bool isOnGround;    
     
     private Rigidbody2D rb;
+    private Animator animator;
 
     private float directionX;
     public float DirectionX
@@ -39,12 +40,22 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         rb.velocity = new Vector2(directionX * speed, rb.velocity.y);
+
+        if (directionX != 0)
+        {
+            animator.Play("player-walking");
+        }
+        else
+        {
+            animator.Play("player-idle");
+        }
 
         if (directionX > 0.6)
         {
