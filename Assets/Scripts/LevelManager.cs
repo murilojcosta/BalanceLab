@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] private int totalRobots;
-    [SerializeField] private int robotsInDestination;
+    [SerializeField] private RobotDestination[] robotDestinations;
     [SerializeField] private ExitDoor exitDoor;
 
     public bool IsDoorOpened {  get; private set; }
@@ -17,15 +16,22 @@ public class LevelManager : MonoBehaviour
         instance = this;
     }
 
-    public void AddRobotInDestination(int savedRobots)
-    {
-        robotsInDestination += savedRobots;
-        ControlDoor();
-    }
 
-    private void ControlDoor()
+
+    public void ControlDoor()
     {
-        IsDoorOpened = (robotsInDestination >= totalRobots);      
+        bool allDestinationsCompleted = true;
+
+        foreach (RobotDestination robotDestination in robotDestinations)
+        {
+            if (!robotDestination.Completed())
+            {
+                allDestinationsCompleted = false;
+            }
+        }
+
+        IsDoorOpened = allDestinationsCompleted;   
+        
         if(IsDoorOpened )
         {
             exitDoor.OpenDoor();

@@ -4,31 +4,30 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class RobotDestination : MonoBehaviour
-{
-    [SerializeField] private LayerMask layerRobot;
+{    
+    [SerializeField] private int totalRobots;
+    [SerializeField] private int currentRobots;
 
-    private Animator animator;
+    [SerializeField] private Animator animator;
 
-    private void Start()
+    public void AddRobot()
     {
-        animator = GetComponentInChildren<Animator>();
+        currentRobots++;
+        LevelManager.instance.ControlDoor();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OpenDoor()
     {
-        if ((layerRobot.value & (1 << collision.transform.gameObject.layer)) > 0)
-        {
-            animator.SetTrigger("Open");
-
-            LevelManager.instance.AddRobotInDestination(1);
-        }
+        animator.SetTrigger("Open");
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    public void CloseDoor()
     {
-        if ((layerRobot.value & (1 << collision.transform.gameObject.layer)) > 0)
-        {
-            LevelManager.instance.AddRobotInDestination(-1);
-        }    
+        animator.SetTrigger("Close");
+    }
+
+    public bool Completed()
+    {
+        return currentRobots == totalRobots;
     }
 }

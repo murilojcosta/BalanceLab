@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Robot : MonoBehaviour
 {
@@ -11,21 +12,25 @@ public class Robot : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float directionX;
     [SerializeField] private Transform pointToCheckWall;
-    [SerializeField] private Transform pointToCheckFloor;
+    [SerializeField] private Transform pointToCheckFloor;    
 
     private bool isOnDestination;
+    private RobotDestination robotDestination;
 
     private Rigidbody2D rb;
+    private Animator animator;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
         directionX = 1;
     }
     private void Update()
     {
         CheckFloor();
         CheckWall();
+        EnterDestination();
     }
 
     private void FixedUpdate()
@@ -37,8 +42,11 @@ public class Robot : MonoBehaviour
     {     
         if ((destinationLayer.value & (1 << collision.transform.gameObject.layer)) > 0)        
         {            
-            isOnDestination = true;
-            speed = 0;
+            if(collision.TryGetComponent<RobotDestination>(out robotDestination))
+            {
+                isOnDestination = true;                
+                speed = 0;
+            }            
         }
     }
 
@@ -53,13 +61,45 @@ public class Robot : MonoBehaviour
             return speed; 
         }
     }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {       
-        if ((destinationLayer.value & (1 << collision.transform.gameObject.layer)) > 0)
+    private void EnterDestination()
+    {
+        if (isOnDestination && Vector2.Distance(transform.position, robotDestination.transform.position) > 0.02f)
         {
-            isOnDestination = false;
-        }
+            transform.Translate(Time.deltaTime,0,0,robotDestination.transform);
+            //Debug.Log("robotDestination.transform.position " + robotDestination.transform.position);
+            //Debug.Log("robotDestination.transform.localPosition " + robotDestination.transform.localPosition);
+            //Debug.Log("transform.position " + transform.position);
+            //Debug.Log("transform.localPosition" + transform.localPosition);
+
+            Debug.Log("distance"+Vector2.Distance(transform.position, robotDestination.transform.position)  );
+
+            if (Vector2.Distance(transform.position, robotDestination.transform.position) < 0.02f)
+            {
+                Debug.Log("Reach");
+                robotDestination.OpenDoor();
+                StartCoroutine(DoEnterDestination());
+            }
+        }        
+    }
+
+    private IEnumerator DoEnterDestination()
+    {
+        yield return new WaitForSeconds(0.5f);
+        animator.SetTrigger("Enter");
+        StartCoroutine(DoCloseDoorDestination());
+    }
+
+    private IEnumerator DoCloseDoorDestination()
+    {
+        yield return new WaitForSeconds(0.8f);
+        robotDestination.CloseDoor();
+        StartCoroutine(DoInactive());
+    }
+
+    private IEnumerator DoInactive()
+    {
+        yield return new WaitForSeconds(0.5f);
+        gameObject.SetActive(false);
     }
 
     private void CheckFloor()

@@ -177,8 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433a7269d438d5047ad20fe9c551f24a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalRobots: 1
-  robotsInDestination: 0
+  robotDestinations: []
   exitDoor: {fileID: 257309785}
 --- !u!1 &246941994
 GameObject:
@@ -527,7 +526,7 @@ Camera:
   far clip plane: 1000
   field of view: 129.2
   orthographic: 1
-  orthographic size: 8.4375
+  orthographic size: 7.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -29088,17 +29087,53 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robot
       objectReference: {fileID: 0}
+    - target: {fileID: 3983447010348777501, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983447010348777501, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983447010348777501, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983447010348777501, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6673535043879338372, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
       propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7205669428998699408, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1854806356, guid: 7c502d5684309c34db22673f531964bc, type: 3}
+    - target: {fileID: 7205669428998699408, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
+      propertyPath: m_Color.a
+      value: 0.8156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 7205669428998699408, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
+      propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7205669428998699408, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7205669428998699408, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7875108065465084355, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.35
+      value: 6.43
       objectReference: {fileID: 0}
     - target: {fileID: 7875108065465084355, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.11
+      value: -9.92
       objectReference: {fileID: 0}
     - target: {fileID: 7875108065465084355, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29131,6 +29166,38 @@ PrefabInstance:
     - target: {fileID: 7875108065465084355, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155207976802052377, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
+      propertyPath: OnEnterDestination.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155207976802052377, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
+      propertyPath: OnEnterDestination.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155207976802052377, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
+      propertyPath: OnEnterDestination.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 139557990}
+    - target: {fileID: 8155207976802052377, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
+      propertyPath: OnEnterDestination.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155207976802052377, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
+      propertyPath: OnEnterDestination.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddRobotInDestination
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155207976802052377, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
+      propertyPath: OnEnterDestination.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155207976802052377, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
+      propertyPath: OnEnterDestination.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155207976802052377, guid: cf3fb2b6955e85d46a6eef518a7a31f8, type: 3}
+      propertyPath: OnEnterDestination.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29248,7 +29315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8332455649897841280, guid: ed359d262f61a164b9658cb85d33e024, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29266,10 +29333,6 @@ PrefabInstance:
     - target: {fileID: 2104980655649270372, guid: 878293cba44e23a4b828addc594e2d4e, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2748585761391065234, guid: 878293cba44e23a4b828addc594e2d4e, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5310743546360197917, guid: 878293cba44e23a4b828addc594e2d4e, type: 3}
       propertyPath: m_LocalPosition.x
