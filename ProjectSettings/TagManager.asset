@@ -41,6 +41,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Wall
+    uniqueID: 3575557231
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 142754551
+    locked: 0
+  - name: WeightBalance
+    uniqueID: 2455168705
     locked: 0

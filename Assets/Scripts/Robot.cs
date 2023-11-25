@@ -66,16 +66,8 @@ public class Robot : MonoBehaviour
         if (isOnDestination && Vector2.Distance(transform.position, robotDestination.transform.position) > 0.02f)
         {
             transform.Translate(Time.deltaTime,0,0,robotDestination.transform);
-            //Debug.Log("robotDestination.transform.position " + robotDestination.transform.position);
-            //Debug.Log("robotDestination.transform.localPosition " + robotDestination.transform.localPosition);
-            //Debug.Log("transform.position " + transform.position);
-            //Debug.Log("transform.localPosition" + transform.localPosition);
-
-            Debug.Log("distance"+Vector2.Distance(transform.position, robotDestination.transform.position)  );
-
             if (Vector2.Distance(transform.position, robotDestination.transform.position) < 0.02f)
-            {
-                Debug.Log("Reach");
+            {                
                 robotDestination.OpenDoor();
                 StartCoroutine(DoEnterDestination());
             }
@@ -92,7 +84,7 @@ public class Robot : MonoBehaviour
     private IEnumerator DoCloseDoorDestination()
     {
         yield return new WaitForSeconds(0.8f);
-        robotDestination.CloseDoor();
+        robotDestination.CloseDoor();        
         StartCoroutine(DoInactive());
     }
 
